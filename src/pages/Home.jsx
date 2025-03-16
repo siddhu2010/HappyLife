@@ -5,27 +5,49 @@ import { HeartIcon, ChatBubbleOvalLeftIcon, PaperAirplaneIcon, BookmarkIcon } fr
 import { HeartIcon as HeartIconSolid } from '@heroicons/react/24/solid';
 
 const Home = () => {
+    // Create an array of story items.
+    // First item is for "Add Your Story" and then include some user stories.
+    const storyItems = [
+        { id: 'add', isAdd: true },
+        users[CRUSH_ID],
+        users.me,
+        users.girl1,
+    ];
+
     return (
         <div className="pb-16">
             {/* Stories */}
             <div className="border-b dark:border-instagram-border overflow-x-auto">
                 <div className="flex px-4 py-4 space-x-4">
-                    {[users[CRUSH_ID]].map((user) => (
-                        <Link
-                            key={user.id}
-                            to={`/stories`}
-                            className="flex flex-col items-center space-y-1"
-                        >
-                            <div className="w-16 h-16 rounded-full ring-2 ring-pink-500 p-0.5">
-                                <img
-                                    src={user.avatar}
-                                    alt={user.username}
-                                    className="w-full h-full rounded-full object-cover"
-                                />
-                            </div>
-                            <span className="text-xs truncate w-16 text-center">{user.username}</span>
-                        </Link>
-                    ))}
+                    {storyItems.map((item) =>
+                        item.isAdd ? (
+                            <Link
+                                key={item.id}
+                                to="/add-story"
+                                className="flex flex-col items-center space-y-1"
+                            >
+                                <div className="w-16 h-16 rounded-full border-2 border-gray-300 flex items-center justify-center">
+                                    <span className="text-2xl text-gray-400">+</span>
+                                </div>
+                                <span className="text-xs truncate w-16 text-center">Add Your Story</span>
+                            </Link>
+                        ) : (
+                            <Link
+                                key={item.id}
+                                to={`/stories`}
+                                className="flex flex-col items-center space-y-1"
+                            >
+                                <div className="w-16 h-16 rounded-full ring-2 ring-pink-500 p-0.5">
+                                    <img
+                                        src={item.avatar}
+                                        alt={item.username}
+                                        className="w-full h-full rounded-full object-cover"
+                                    />
+                                </div>
+                                <span className="text-xs truncate w-16 text-center">{item.username}</span>
+                            </Link>
+                        )
+                    )}
                 </div>
             </div>
 
@@ -57,7 +79,12 @@ const Home = () => {
                                 </Link>
                                 <button className="p-1">
                                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z" />
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth={2}
+                                            d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"
+                                        />
                                     </svg>
                                 </button>
                             </div>
@@ -122,4 +149,4 @@ const Home = () => {
     );
 };
 
-export default Home; 
+export default Home;

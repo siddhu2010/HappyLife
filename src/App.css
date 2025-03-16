@@ -47,3 +47,7 @@ code {
 .story-progress-incomplete {
   width: 0;
 }
+
+.faint-text {
+  color: rgba(255, 255, 255, 0.5); /* Adjust opacity as needed for a faint white/grey color */
+}

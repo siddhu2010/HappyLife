@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { users, posts } from '../data/mockData';
+import { useParams, useNavigate } from 'react-router-dom';
+import { users, posts, CRUSH_ID } from '../data/mockData';
 
-// FollowButton component with toggle functionality
+// FollowButton component with toggle functionality and Message redirect
 const FollowButton = () => {
     const [isFollowing, setIsFollowing] = useState(false);
+    const navigate = useNavigate();
 
     return (
         <div className="flex gap-2 mt-4">
@@ -24,19 +25,17 @@ const FollowButton = () => {
                             viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg"
                         >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M19 9l-7 7-7-7"
-                            />
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                         </svg>
                     </>
                 ) : (
                     "Follow"
                 )}
             </button>
-            <button className="flex-1 bg-gray-100 dark:bg-instagram-elevated py-1.5 rounded-lg font-semibold">
+            <button
+                className="flex-1 bg-gray-100 dark:bg-instagram-elevated py-1.5 rounded-lg font-semibold"
+                onClick={() => navigate(`/chat/${CRUSH_ID}`)}
+            >
                 Message
             </button>
         </div>
@@ -96,7 +95,7 @@ const Profile = () => {
                     </div>
                 </div>
 
-                {/* Replaced inline action buttons with FollowButton */}
+                {/* Action buttons (Follow & Message) */}
                 <FollowButton />
             </div>
 

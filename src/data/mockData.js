@@ -6,62 +6,62 @@ export const users = {
         username: 'I.n.a.y.a',
         fullName: 'Inaya',
         avatar: 'https://github.com/siddhu2010/Sangeet/blob/main/Screenshot%202025-03-13%20235458.png?raw=true',
-        bio: '✨ Living life to the fullest\n🎓 Art & Design\n🌎 Travel enthusiast\n🎨 Commission open',
+        bio: 'Architect\nRomanticizing existence🪄🎓 \n🎥 •Fun • Beauty • Lifestyle\n🌎 Travel enthusiast\n',
         posts: 23,
         followers: '155',
         following: 80,
         isVerified: false,
         stories: [
             { id: 1, type: 'image', url: 'https://images.unsplash.com/photo-1513207565459-d7f36bfa1222' },
-            { id: 2, type: 'image', url: 'https://images.unsplash.com/photo-1516483638261-f4dbaf036963' },
+            { id: 2, type: 'image', url: 'https://static.toiimg.com/thumb/msid-92089121,width-748,height-499,resizemode=4,imgsize-139308/Most-beautiful-places-to-visit-in-India-for-first-timers.jpg' },
             { id: 3, type: 'image', url: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f' },
             { id: 4, type: 'image', url: 'https://images.unsplash.com/photo-1501084817091-a4f3d1d19e07' },
         ],
         highlights: [
-            { id: 1, title: 'Travel ✈️', cover: 'https://images.unsplash.com/photo-1502791451862-7bd8c1df43a7' },
-            { id: 2, title: 'Art 🎨', cover: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f' },
-            { id: 3, title: 'Studio 🎯', cover: 'https://images.unsplash.com/photo-1513207565459-d7f36bfa1222' },
-            { id: 4, title: 'Nature 🌿', cover: 'https://images.unsplash.com/photo-1501084817091-a4f3d1d19e07' },
+            { id: 1, title: 'Friends', cover: 'https://st.depositphotos.com/1778008/4643/i/450/depositphotos_46435535-stock-photo-college-friends-outdoors.jpg' },
+            { id: 2, title: 'Travel', cover: 'https://static.toiimg.com/thumb/msid-92089121,width-748,height-499,resizemode=4,imgsize-139308/Most-beautiful-places-to-visit-in-India-for-first-timers.jpg' },
+            { id: 3, title: 'Unfiltered Me🎯', cover: 'https://github.com/siddhu2010/Sangeet/blob/main/Screenshot%202025-03-15%20172442.png?raw=true' },
+            { id: 4, title: 'Human Enough?', cover: 'https://images.unsplash.com/photo-1501084817091-a4f3d1d19e07' },
         ],
     },
     me: {
         id: 'me',
-        username: 'your_username',
+        username: 'filmmaker_Yatharth',
         avatar: 'https://images.unsplash.com/photo-1618641986557-1ecd230959aa',
     },
     girl1: {
         id: 'girl1',
-        username: 'Ritss',
+        username: 'Ritika',
         fullName: 'Ritika',
         avatar: 'https://github.com/siddhu2010/Sangeet/blob/main/Screenshot%202025-03-14%20010615.png?raw=true',
     },
     girl2: {
         id: 'girl2',
-        username: 'girl2_account',
+        username: 'Samarth Jain',
         fullName: 'Sophia Brown',
         avatar: 'https://images.unsplash.com/photo-1516483638261-f4dbaf036963',
     },
     boy1: {
         id: 'boy1',
-        username: 'boy1_account',
+        username: 'Elonismydaddy',
         fullName: 'Liam Smith',
         avatar: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f',
     },
     girl3: {
         id: 'girl3',
-        username: 'girl3_account',
+        username: 'Deeksha',
         fullName: 'Olivia Davis',
         avatar: 'https://images.unsplash.com/photo-1513207565459-d7f36bfa1222',
     },
     boy2: {
         id: 'boy2',
-        username: 'boy2_account',
-        fullName: 'Noah Wilson',
+        username: 'John McCarthy',
+        fullName: 'John McCarthy',
         avatar: 'https://images.unsplash.com/photo-1516483638261-f4dbaf036963',
     },
     girl4: {
         id: 'girl4',
-        username: 'girl4_account',
+        username: 'Sneha',
         fullName: 'Ava Martinez',
         avatar: 'https://images.unsplash.com/photo-1513207565459-d7f36bfa1222',
     },
@@ -105,6 +105,8 @@ export const users = {
     },
 };
 
+
+
 export const posts = [
     {
         id: 1,
@@ -118,7 +120,7 @@ export const posts = [
     {
         id: 2,
         userId: CRUSH_ID,
-        image: 'https://images.unsplash.com/photo-1501084817091-a4f3d1d19e07',
+        image: 'https://github.com/siddhu2010/Sangeet/blob/main/Screenshot%202025-03-15%20172442.png?raw=true',
         caption: 'Morning light in the studio is just different ☀️ #morningvibes #artistlife',
         likes: 2567,
         comments: 156,
@@ -127,7 +129,7 @@ export const posts = [
     {
         id: 3,
         userId: CRUSH_ID,
-        image: 'https://images.unsplash.com/photo-1513207565459-d7f36bfa1222',
+        image: 'https://github.com/siddhu2010/Sangeet/blob/main/Screenshot%202025-03-15%20172641.png?raw=true',
         caption: 'Work in progress... Can\'t wait to share the final result! 🎨 #wip #art',
         likes: 3891,
         comments: 245,
@@ -136,7 +138,7 @@ export const posts = [
     {
         id: 4,
         userId: CRUSH_ID,
-        image: 'https://images.unsplash.com/photo-1516483638261-f4dbaf036963',
+        image: 'https://github.com/siddhu2010/Sangeet/blob/main/Screenshot%202025-03-15%20172713.png?raw=true',
         caption: 'Finding inspiration in nature 🌿 Sometimes you just need to step outside the studio',
         likes: 2123,
         comments: 134,
@@ -145,7 +147,16 @@ export const posts = [
     {
         id: 5,
         userId: CRUSH_ID,
-        image: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f',
+        image: 'https://github.com/siddhu2010/Sangeet/blob/main/Screenshot%202025-03-15%20172741.png?raw=true',
+        caption: 'New commission piece finished! DM for inquiries 🎨 #commissioned #art',
+        likes: 4532,
+        comments: 278,
+        timestamp: '2024-03-02T11:45:00Z',
+    },
+    {
+        id: 6,
+        userId: CRUSH_ID,
+        image: 'https://github.com/siddhu2010/Sangeet/blob/main/Screenshot%202025-03-15%20175054.png?raw=true',
         caption: 'New commission piece finished! DM for inquiries 🎨 #commissioned #art',
         likes: 4532,
         comments: 278,
@@ -153,17 +164,14 @@ export const posts = [
     }
 ];
 
-// Predefined chat responses based on user messages
+// Predefined chat responses
 export const predefinedResponses = {
     greetings: [
         "Heyyyyyyy!!!!",
-        // "Hi there! How are you?",
-        // "Hello! Thanks for the message 💫"
     ],
-    Inquiry: [
+    inquiry: [
         "Ohhhhhh!!!!!Aisi baat hai mtlb kaafi shy ho tum. Lekin agr tum baat hi nhi karoge toh mujhe jaanoge kaise...",
         "Thanks for your interest in my art! I have different styles and pricing options available",
-        // "I'd love to work on a piece for you! What kind of artwork are you looking for?"
     ],
     compliments: [
         "That's so sweet of you to say! Thank you 🥰",
@@ -177,21 +185,55 @@ export const predefinedResponses = {
     ]
 };
 
+// Predefined message patterns and their responses
+export const messagePatterns = [
+    {
+        patterns: ['hi', 'hello', 'hey'],
+        responses: predefinedResponses.greetings
+    },
+    {
+        patterns: ['ok', 'Aree Nhi Nhi....Its nothing like that.Its just that I have never been open to someone whom I dont know.'],
+        responses: predefinedResponses.inquiry
+    },
+    {
+        patterns: ['Yaa..Exactly thats why I think we should meet first. Kyunki aajkal you know it quite sus ti interact on social media', 'amazing', 'love your art', 'great work'],
+        responses: predefinedResponses.compliments
+    },
+    {
+        patterns: ['how long', 'process', 'how do you'],
+        responses: predefinedResponses.process
+    }
+];
+
+// Function to escape special regex characters
+const escapeRegExp = (string) => string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+// Function to get a response based on the message
 export const getResponse = (message) => {
+    // Convert message to lowercase for case-insensitive matching
+    const lowerCaseMessage = message.toLowerCase();
+
+    // Loop through message patterns
     for (const pattern of messagePatterns) {
+        // Check if any pattern matches the message
         if (pattern.patterns.some(p => {
-            const regex = new RegExp(`\\b${escapeRegExp(p)}\\b`, 'i');
-            return regex.test(message);
+            const regex = new RegExp(`\\b${escapeRegExp(p.toLowerCase())}\\b`, 'i'); // Match exact words with word boundaries
+            console.log(regex)
+            return regex.test(lowerCaseMessage);
         })) {
+            // Return a random response from the matched pattern
             const responses = pattern.responses;
+            console.log("resp". res)
             return responses[Math.floor(Math.random() * responses.length)];
         }
     }
+
+    // Default response if no pattern matches
     return "Thanks for your message! 😊";
 };
 
-
-export const chatMessages = {
+// Chat messages
+/*export const chatMessages = {
     [CRUSH_ID]: [
         {
             id: 1,
@@ -229,28 +271,9 @@ export const chatMessages = {
             status: 'read'
         }
     ]
-};
+};*/
 
-// Predefined message patterns and their responses
-export const messagePatterns = [
-    {
-        patterns: ['hi', 'hello', 'hey'],
-        responses: predefinedResponses.greetings
-    },
-    {
-        patterns: ['nhi','nhi'],
-        responses: predefinedResponses.Inquiry
-    },
-    {
-        patterns: ['Yaa..Exactly thats why I think we should meet first. Kyunki aajkal you know it quite sus ti interact on social media', 'amazing', 'love your art', 'great work'],
-        responses: predefinedResponses.compliments
-    },
-    {
-        patterns: ['how long', 'process', 'how do you'],
-        responses: predefinedResponses.process
-    }
-];
-
+// Chat list
 export const chatList = [
     {
         id: 'crush123',
@@ -372,7 +395,6 @@ export const chatList = [
         status: 'read',
         isOnline: true,
     },
-    // Additional chats
     {
         id: 'girl8',
         lastMessage: "Can you help me with my homework?",
@@ -405,92 +427,4 @@ export const chatList = [
         status: 'unread',
         isOnline: false,
     },
-    {
-        id: 'girl10',
-        lastMessage: "What are your plans for the summer?",
-        timestamp: "2024-03-06T03:15:00Z",
-        unread: 0,
-        status: 'delivered',
-        isOnline: true,
-    },
-    {
-        id: 'boy10',
-        lastMessage: "Did you finish the book I recommended?",
-        timestamp: "2024-03-06T02:30:00Z",
-        unread: 0,
-        status: 'read',
-        isOnline: false,
-    },
-    {
-        id: 'girl11',
-        lastMessage: "Let's do a movie night soon!",
-        timestamp: "2024-03-06T01:45:00Z",
-        unread: 1,
-        status: 'unread',
-        isOnline: true,
-    },
-    {
-        id: 'boy11',
-        lastMessage: "What do you think about the new restaurant?",
-        timestamp: "2024-03-06T12:15:00Z",
-        unread: 0,
-        status: 'delivered',
-        isOnline: true,
-    },
-    {
-        id: 'girl12',
-        lastMessage: "I need your opinion on something.",
-        timestamp: "2024-03-06T11:30:00Z",
-        unread: 0,
-        status: 'read',
-        isOnline: false,
-    },
-    {
-        id: 'boy12',
-        lastMessage: "Are you going to the concert next week?",
-        timestamp: "2024-03-06T10:45:00Z",
-        unread: 1,
-        status: 'unread',
-        isOnline: true,
-    },
-    {
-        id: 'girl13',
-        lastMessage: "Let's plan a study session!",
-        timestamp: "2024-03-06T09:15:00Z",
-        unread: 0,
-        status: 'delivered',
-        isOnline: false,
-    },
-    {
-        id: 'boy13',
-        lastMessage: "What time are we meeting for lunch?",
-        timestamp: "2024-03-06T08:30:00Z",
-        unread: 0,
-        status: 'read',
-        isOnline: true,
-    },
-    {
-        id: 'girl14',
-        lastMessage: "I saw your story, it was great!",
-        timestamp: "2024-03-06T07:15:00Z",
-        unread: 1,
-        status: 'unread',
-        isOnline: false,
-    },
-    {
-        id: 'boy14',
-        lastMessage: "Are you free to hang out this weekend?",
-        timestamp: "2024-03-06T06:45:00Z",
-        unread: 0,
-        status: 'delivered',
-        isOnline: true,
-    },
-    {
-        id: 'girl15',
-        lastMessage: "Let's catch up soon!",
-        timestamp: "2024-03-06T05:15:00Z",
-        unread: 0,
-        status: 'read',
-        isOnline: false,
-    },
-]; 
+];
