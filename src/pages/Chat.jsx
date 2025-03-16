@@ -100,7 +100,7 @@ const Chat = () => {
     {
       expectedSender: ["Hey"], // No sender input needed for stage 0
       receiverReplies: [
-        { text: "Heyyyy!!!!", delay: 3000 },
+        { text: "Heyyyy!!!!", delay: 10000 },
         {
           text:
             "Ritika told me about you.\nAnd she was pretty right!!\nTum message krne mein kaafi sochte ho, toh isliye maine hi message kar diya.",
