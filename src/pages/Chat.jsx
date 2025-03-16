@@ -44,12 +44,7 @@ const VoiceNote = ({ audioUrl }) => {
             viewBox="0 0 24 24"
             stroke="currentColor"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M10 9v6m4-6v6"
-            />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 9v6m4-6v6" />
           </svg>
         ) : (
           // Play icon
@@ -60,12 +55,7 @@ const VoiceNote = ({ audioUrl }) => {
             viewBox="0 0 24 24"
             stroke="currentColor"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M14.752 11.168l-5.197-3.034A1 1 0 008 9.028v5.944a1 1 0 001.555.832l5.197-3.034a1 1 0 000-1.664z"
-            />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-5.197-3.034A1 1 0 008 9.028v5.944a1 1 0 001.555.832l5.197-3.034a1 1 0 000-1.664z" />
           </svg>
         )}
       </button>
@@ -104,14 +94,13 @@ const Chat = () => {
   const [conversationStage, setConversationStage] = useState(0);
   const [expectedPartIndex, setExpectedPartIndex] = useState(0);
 
-  // Combined conversationStages array (stages 0-4 are your existing conversation,
-  // and stages 5-17 are the additional conversation you provided)
+  // Define conversation stages with expected sender messages and receiver replies.
+  // Stage 0 will be auto-triggered from the receiver.
   const conversationStages = [
-    // Existing conversation stages (example)
     {
-      expectedSender: ["Hey"],
+      expectedSender: [], // No sender input needed for stage 0
       receiverReplies: [
-        { text: "Heyyyy!!!!", delay: 6000 },
+        { text: "Heyyyy!!!!", delay: 3000 },
         {
           text:
             "Ritika told me about you.\nAnd she was pretty right!!\nTum message krne mein kaafi sochte ho, toh isliye maine hi message kar diya.",
@@ -157,12 +146,11 @@ const Chat = () => {
     },
     {
       expectedSender: ["That was funny."],
-      receiverReplies: [], // End of existing conversation.
+      receiverReplies: [], // End of conversation.
     },
-    // ----------------- Additional Conversation Stages -----------------
-    // Stage 5: Auto-trigger receiver's message (no sender expected)
+    // Additional conversation stages...
     {
-      expectedSender: [","], // No sender input required
+      expectedSender: [","],
       receiverReplies: [
         {
           text:
@@ -171,14 +159,10 @@ const Chat = () => {
         },
       ],
     },
-    // Stage 6:
     {
       expectedSender: ["Pehle yeh toh btaao ki main tumhara pasindida mard hoon ki nhi..?"],
-      receiverReplies: [
-        { text: "Umm...Kamiya toh hai", delay: 3000 },
-      ],
+      receiverReplies: [{ text: "Umm...Kamiya toh hai", delay: 3000 }],
     },
-    // Stage 7:
     {
       expectedSender: ["Jaise ki...?"],
       receiverReplies: [
@@ -188,7 +172,6 @@ const Chat = () => {
         },
       ],
     },
-    // Stage 8:
     {
       expectedSender: ["You are funny yaar!!"],
       receiverReplies: [
@@ -199,7 +182,6 @@ const Chat = () => {
         },
       ],
     },
-    // Stage 9:
     {
       expectedSender: [
         "Are you kidding...?\nYeh toh bss thode time ke liye tha naa...\nTum toh Indore aane waali thi naa...",
@@ -212,7 +194,6 @@ const Chat = () => {
         },
       ],
     },
-    // Stage 10:
     {
       expectedSender: [
         "But...",
@@ -227,7 +208,6 @@ const Chat = () => {
         },
       ],
     },
-    // Stage 11:
     {
       expectedSender: [
         "What the fuck!!!\nYeh baat kaha se aagyi beech main..\nI'm just saying ki mujhse milo yaa phir VC karo.."
@@ -240,7 +220,6 @@ const Chat = () => {
         },
       ],
     },
-    // Stage 12:
     {
       expectedSender: [
         "Again same thing yaaar...\nMain thak gyi hoon tumhein VC kr kr ke...."
@@ -253,35 +232,24 @@ const Chat = () => {
         },
       ],
     },
-    // Stage 13:
     {
       expectedSender: ["You are funny yaar!!"],
-      receiverReplies: [
-        { text: "Wow....", delay: 3000 },
-      ],
+      receiverReplies: [{ text: "Wow....", delay: 3000 }],
     },
-    // Stage 14:
     {
       expectedSender: ["Main loser!?"],
-      receiverReplies: [
-        { text: "Yes.", delay: 3000 },
-      ],
+      receiverReplies: [{ text: "Yes.", delay: 3000 }],
     },
-    // Stage 15:
     {
       expectedSender: [
         "Thode din pehle tk toh tumhein yeh loser cute lgta tha... Ab kya hogya"
       ],
-      receiverReplies: [
-        { text: "See... No Filmy Dialogues haa... Bye", delay: 3000 },
-      ],
+      receiverReplies: [{ text: "See... No Filmy Dialogues haa... Bye", delay: 3000 }],
     },
-    // Stage 16:
     {
       expectedSender: ["Filmy nhi ho rha, bss puch rha hoon.. Ki maaine galat kya kiya hai?"],
-      receiverReplies: [], // No reply defined; fallback auto-reply may be used.
+      receiverReplies: [], // Fallback auto-reply can be used.
     },
-    // Stage 17:
     {
       expectedSender: ["?", "Hello?", "gyi kya?", "oye?", "??"],
       receiverReplies: [
@@ -292,17 +260,19 @@ const Chat = () => {
     },
   ];
 
-  // Auto-trigger stage 5 (receiver's message) if conversationStage is 5 and no sender input is expected.
+  // ----------------- Auto-Trigger Stage 0 on Chat Open -----------------
   useEffect(() => {
-    if (conversationStage === 5) {
-      // Wait 2 seconds and then trigger stage 5
-      setTimeout(() => {
-        triggerFixedReply(5);
-        setConversationStage(6);
-      }, 2000);
+    if (conversationStage === 0) {
+      // Auto-trigger stage 0 after a short delay (e.g., 3000 ms) so receiver starts first.
+      const timer = setTimeout(() => {
+        triggerFixedReply(0);
+        setConversationStage(1);
+      }, 3000);
+      return () => clearTimeout(timer);
     }
   }, [conversationStage]);
 
+  // ----------------- Scroll & Window Click Handlers -----------------
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
@@ -336,7 +306,7 @@ const Chat = () => {
       lines.forEach((line, index) => {
         setTimeout(() => {
           const newReply = {
-            id: messages.length + 1,
+            id: messages.length + 1, // In production, use a proper unique id
             senderId: CRUSH_ID,
             type: "text",
             text: line,
@@ -382,7 +352,7 @@ const Chat = () => {
         }
       }
     }
-    // Fallback auto-reply (if not in fixed script or not matching)
+    // Fallback auto-reply if not matching fixed script
     setTimeout(() => {
       const response = "Thanks for your message! 😊";
       const crushResponse = {
@@ -394,7 +364,7 @@ const Chat = () => {
         status: "read",
       };
       setMessages((prev) => [...prev, crushResponse]);
-    }, 6000000);
+    }, 3000);
   };
 
   const handleVoiceNote = () => {
@@ -420,7 +390,7 @@ const Chat = () => {
     }, 3000);
   };
 
-  // ----------------- Context Menu & Long Press -----------------
+  // ----------------- Context Menu & Long Press Functions -----------------
   const startLongPress = (event, msg) => {
     event.stopPropagation();
     const isTouchEvent = event.type === "touchstart";
