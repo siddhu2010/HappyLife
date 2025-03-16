@@ -98,7 +98,7 @@ const Chat = () => {
   // Stage 0 will be auto-triggered from the receiver.
   const conversationStages = [
     {
-      expectedSender: [], // No sender input needed for stage 0
+      expectedSender: ["Hey"], // No sender input needed for stage 0
       receiverReplies: [
         { text: "Heyyyy!!!!", delay: 3000 },
         {
