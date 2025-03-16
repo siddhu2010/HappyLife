@@ -112,13 +112,13 @@ const Chat = () => {
       expectedSender: [
         "Aree nhi nhi... ",
         "Aisa kn hai",
-        "It's just that I've never been open to someone whom I don’t know.",
+        "It's just that I have never been open to someone whom I don’t know.",
       ],
       receiverReplies: [
         {
           text:
             "Ohhhhhh!!!!! Aisi baat hai? \n Matlab kaafi shy ho tum.\nLekin agar tum baat hi nahi karoge, toh mujhe jaanoge kaise...",
-          delay: 4000,
+          delay: 10000,
         },
       ],
     },
@@ -129,7 +129,7 @@ const Chat = () => {
         "Kyunki aajkal, you know, it's quite sus about trusting social media!",
       ],
       receiverReplies: [
-        { text: "Abhi se shaq, haan!! 😏 Hmm... Nice.", delay: 3000 },
+        { text: "Abhi se shaq, haan!! 😏 Hmm... Nice.", delay: 4000 },
       ],
     },
     {
@@ -142,7 +142,7 @@ const Chat = () => {
         {
           text:
             "Aree, it's okay.\nWaise bhi mujhe aise log pasand hain jinka humour mujhse bhi kharab ho. 😆",
-          delay: 3000,
+          delay: 5000,
         },
       ],
     },
@@ -156,7 +156,7 @@ const Chat = () => {
       receiverReplies: [
         {
           text:
-            "So itni invesigation ke baad kya lgta hai\nhai. I fit in your pasindida aurat\nwali list?",
+            "So itni invesigation ke baad kya lgta hai \n Do I fit in your pasindida aurat wali list?",
           delay: 2000,
         },
       ],
@@ -170,17 +170,17 @@ const Chat = () => {
       receiverReplies: [
         {
           text: "Woh sb main thik kr dungi...\nMeri Programming hi aisi hui hai...",
-          delay: 3000,
+          delay: 5000,
         },
       ],
     },
     {
-      expectedSender: ["You are funny yaar!!"],
+      expectedSender: ["Mujhe tumse milna hai thats it.."],
       receiverReplies: [
         {
           text:
             "Acha!!! Kyu milna hai..?\nAchi baatein chal rhi hai humari from 1 month...\nmilna zaroori hai kya..??",
-          delay: 3000,
+          delay: 5000,
         },
       ],
     },
@@ -191,22 +191,34 @@ const Chat = () => {
       receiverReplies: [
         {
           text:
-            "Its tough yaar Sender.. I've lot of work here.\nYou know naa college and then internship dono ko manage krna bohot tough hai...\nAnd mere liye career bohot important hai....\nI hope you understand..",
-          delay: 3000,
+            "Its tough yaar Yatharth.. I've lot of work here.\nYou know naa college and then internship dono ko manage krna bohot tough hai...\nAnd mere liye career bohot important hai....\nI hope you understand..",
+          delay: 6000,
         },
       ],
     },
     {
       expectedSender: [
         "But...",
-        "OK FINE!!!",
-        "Sender, will you just stop behaving like a child.\nBe a man and try to understand my situation.\nMain abhi nhi mil skti.\nMera kaam, mera career mere liye bohot zyada important hai..."
+        "OK FINE!!!"
       ],
       receiverReplies: [
         {
           text:
-            "So what yaar.. Mere bhi kaam hai.\nI'm also filmmaker.. I've also have lot of work to do,\nwoh bhi college ke saath... Phir bhi main tumhare liye time nikalta hoon..",
-          delay: 3000,
+            "Yatharth, will you just stop behaving like a child.\nBe a man and try to understand my situation.\nMain abhi nhi mil skti.\nMera kaam, mera career mere liye bohot zyada important hai..."
+          delay: 7000,
+        },
+      ],
+    },
+    {
+      expectedSender: [
+        "So what yaar.. Mere bhi kaam hai.\nI'm also filmmaker.. I've also have lot of work to do,\nwoh bhi college ke saath... Phir bhi main tumhare liye time nikalta hoon..",
+       
+      ],
+      receiverReplies: [
+        {
+          text:
+            "See Yatharth, I'm coder and atleast I earn...\nnot struggling filmmaker like you..",
+          delay: 4000,
         },
       ],
     },
@@ -217,36 +229,21 @@ const Chat = () => {
       receiverReplies: [
         {
           text:
-            "See Sender, I'm coder and atleast I earn...\nnot struggling filmmaker like you..",
-          delay: 3000,
-        },
-      ],
-    },
-    {
-      expectedSender: [
-        "Again same thing yaaar...\nMain thak gyi hoon tumhein VC kr kr ke...."
-      ],
-      receiverReplies: [
-        {
-          text:
+            "Again same thing yaaar...\nMain thak gyi hoon tumhein VC kr kr ke...."
             "Agr mujhe pta hota naa ki tum itne selfish ho ki that you are thinking\nonly about yourself.. Ki bss jaise taise baat ho jaaye yaa main tumse\nmil loon... toh main tumhein kbhi date hi krti...\nYou're now giving me Nightmares now...",
-          delay: 3000,
+          delay: 6000,
         },
       ],
     },
     {
-      expectedSender: ["You are funny yaar!!"],
-      receiverReplies: [{ text: "Wow....", delay: 3000 }],
+      expectedSender: ["Wow....",
+                      "Nightmares...."],
+      receiverReplies: [{ text: "Yes" , delay: 3000 }],
     },
     {
-      expectedSender: ["Main loser!?"],
-      receiverReplies: [{ text: "Yes.", delay: 3000 }],
-    },
-    {
-      expectedSender: [
-        "Thode din pehle tk toh tumhein yeh loser cute lgta tha... Ab kya hogya"
-      ],
-      receiverReplies: [{ text: "See... No Filmy Dialogues haa... Bye", delay: 3000 }],
+      expectedSender: ["Thode din pehle tk toh tuum mere saath future dekh rahi thi", 
+                       "Aur Ab Nightmares..."],
+      receiverReplies: [{ text: "See... No Filmy Dialogues haa... Bye", delay: 4000 }],
     },
     {
       expectedSender: ["Filmy nhi ho rha, bss puch rha hoon.. Ki maaine galat kya kiya hai?"],
@@ -255,9 +252,9 @@ const Chat = () => {
     {
       expectedSender: ["?", "Hello?", "gyi kya?", "oye?", "??"],
       receiverReplies: [
-        { text: "Bro Please yaar, baad main baat karenge....", delay: 3000 },
+        { text: "Bro Please yaar, baad main baat karenge....", delay: 4000 },
         { text: "Abhi mera mood nhi hai... Bye", delay: 3000 },
-        { text: "And Sender... Please have some Self Respect...", delay: 3000 },
+        { text: "And Yatharth... Please have some Self Respect...", delay: 3000 },
       ],
     },
   ];
