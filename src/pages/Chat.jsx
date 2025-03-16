@@ -366,7 +366,7 @@ const Chat = () => {
         status: "read",
       };
       setMessages((prev) => [...prev, crushResponse]);
-    }, 3000);
+    }, 600000);
   };
 
   const handleVoiceNote = () => {
