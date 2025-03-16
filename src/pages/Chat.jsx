@@ -8,8 +8,8 @@ import {
   MicrophoneIcon,
 } from "@heroicons/react/24/solid";
 
-// ----------------- Custom VoiceNote Component -----------------
-const VoiceNote = ({ audioUrl }) => {
+// ----------------- Custom VoiceMessage Component -----------------
+const VoiceMessage = ({ audioUrl }) => {
   const audioRef = useRef(new Audio(audioUrl));
   const [playing, setPlaying] = useState(false);
 
@@ -33,7 +33,7 @@ const VoiceNote = ({ audioUrl }) => {
   }, []);
 
   return (
-    <div className="voice-note flex items-center bg-gray-200 dark:bg-gray-700 p-4 rounded-lg">
+    <div className="voice-message flex items-center bg-gray-200 dark:bg-gray-700 p-4 rounded-lg">
       <button onClick={togglePlay} className="mr-4 focus:outline-none">
         {playing ? (
           // Pause icon
@@ -76,7 +76,7 @@ const VoiceNote = ({ audioUrl }) => {
     </div>
   );
 };
-// ----------------- End of VoiceNote Component -----------------
+// ----------------- End of VoiceMessage Component -----------------
 
 const Chat = () => {
   const { id } = useParams();
@@ -94,175 +94,51 @@ const Chat = () => {
   const [conversationStage, setConversationStage] = useState(0);
   const [expectedPartIndex, setExpectedPartIndex] = useState(0);
 
-  // Define conversation stages with expected sender messages and receiver replies.
-  // Stage 0 will be auto-triggered from the receiver.
-  const conversationStages = [
+  // === New Conversation Stages for Voice Message Interaction ===
+  // For stages 1–4, the expected sender input is now the string "voice message"
+  const conversationStagesFinal = [
+    // Stage 0: Auto-trigger receiver's automated message when chat opens.
     {
-      expectedSender: ["Hey"], // No sender input needed for stage 0
+      expectedSender: [], // No sender input required
       receiverReplies: [
-        { text: "Heyyyy!!!!", delay: 10000 },
-        {
-          text:
-            "Ritika told me about you.\nAnd she was pretty right!!\nTum message krne mein kaafi sochte ho, toh isliye maine hi message kar diya.",
-          delay: 5000,
-        },
-      ],
+        { text: "Hey Yatharth!!", delay: 3000 }
+      ]
     },
+    // Stage 1: Sender is expected to send a voice message.
     {
-      expectedSender: [
-        "Aree nhi nhi... ",
-        "Aisa kn hai",
-        "It's just that I have never been open to someone whom I don’t know.",
-      ],
+      expectedSender: ["voice message"],
       receiverReplies: [
-        {
-          text:
-            "Ohhhhhh!!!!! Aisi baat hai? \n Matlab kaafi shy ho tum.\nLekin agar tum baat hi nahi karoge, toh mujhe jaanoge kaise...",
-          delay: 10000,
-        },
-      ],
+        { text: "Yatharth...just be calm....", delay: 3000 }
+      ]
     },
+    // Stage 2: Sender sends another voice message.
     {
-      expectedSender: [
-        "Yes Exactly!!",
-        "Isliye I think we should meet first.",
-        "Kyunki aajkal, you know, it's quite sus about trusting social media!",
-      ],
+      expectedSender: ["voice message"],
       receiverReplies: [
-        { text: "Abhi se shaq, haan!! 😏 Hmm... Nice.", delay: 4000 },
-      ],
+        { text: "Meri awaaz sun naa hai??", delay: 3000 }
+      ]
     },
+    // Stage 3: Sender sends a voice message.
     {
-      expectedSender: [
-        "Aree nhi, mera vo mtlb nahi tha.",
-        "Actuallyyy, Meine tumhe stalk kia and you look genuine... ",
-        "Hehehe!!(Sorry for poor humour.)",
-      ],
+      expectedSender: ["voice message"],
       receiverReplies: [
-        {
-          text:
-            "Aree, it's okay.\nWaise bhi mujhe aise log pasand hain jinka humour mujhse bhi kharab ho. 😆",
-          delay: 5000,
-        },
-      ],
+        { text: "toh pehle bolo mujh pe gussa nhi karoge..", delay: 3000 }
+      ]
     },
+    // Stage 4: Sender sends a voice message; receiver sends multiple voice message replies.
     {
-      expectedSender: ["That was funny."],
-      receiverReplies: [], // End of conversation.
-    },
-    // Additional conversation stages...
-    {
-      expectedSender: [","],
+      expectedSender: ["voice message"],
       receiverReplies: [
-        {
-          text:
-            "So itni invesigation ke baad kya lgta hai \n Do I fit in your pasindida aurat wali list?",
-          delay: 2000,
-        },
-      ],
-    },
-    {
-      expectedSender: ["Pehle yeh toh btaao ki main tumhara pasindida mard hoon ki nhi..?"],
-      receiverReplies: [{ text: "Umm...Kamiya toh hai", delay: 3000 }],
-    },
-    {
-      expectedSender: ["Jaise ki...?"],
-      receiverReplies: [
-        {
-          text: "Woh sb main thik kr dungi...\nMeri Programming hi aisi hui hai...",
-          delay: 5000,
-        },
-      ],
-    },
-    {
-      expectedSender: ["Mujhe tumse milna hai thats it.."],
-      receiverReplies: [
-        {
-          text:
-            "Acha!!! Kyu milna hai..?\nAchi baatein chal rhi hai humari from 1 month...\nmilna zaroori hai kya..??",
-          delay: 5000,
-        },
-      ],
-    },
-    {
-      expectedSender: [
-        "Are you kidding...?\nYeh toh bss thode time ke liye tha naa...\nTum toh Indore aane waali thi naa...",
-      ],
-      receiverReplies: [
-        {
-          text:
-            "Its tough yaar Yatharth.. I've lot of work here.\nYou know naa college and then internship dono ko manage krna bohot tough hai...\nAnd mere liye career bohot important hai....\nI hope you understand..",
-          delay: 6000,
-        },
-      ],
-    },
-    {
-      expectedSender: [
-        "But...",
-        "OK FINE!!!"
-      ],
-      receiverReplies: [
-        {
-          text:
-            "Yatharth, will you just stop behaving like a child.\nBe a man and try to understand my situation.\nMain abhi nhi mil skti.\nMera kaam, mera career mere liye bohot zyada important hai..."
-          delay: 7000,
-        },
-      ],
-    },
-    {
-      expectedSender: [
-        "So what yaar.. Mere bhi kaam hai.\nI'm also filmmaker.. I've also have lot of work to do,\nwoh bhi college ke saath... Phir bhi main tumhare liye time nikalta hoon..",
-       
-      ],
-      receiverReplies: [
-        {
-          text:
-            "See Yatharth, I'm coder and atleast I earn...\nnot struggling filmmaker like you..",
-          delay: 4000,
-        },
-      ],
-    },
-    {
-      expectedSender: [
-        "What the fuck!!!\nYeh baat kaha se aagyi beech main..\nI'm just saying ki mujhse milo yaa phir VC karo.."
-      ],
-      receiverReplies: [
-        {
-          text:
-            "Again same thing yaaar...\nMain thak gyi hoon tumhein VC kr kr ke...."
-            "Agr mujhe pta hota naa ki tum itne selfish ho ki that you are thinking\nonly about yourself.. Ki bss jaise taise baat ho jaaye yaa main tumse\nmil loon... toh main tumhein kbhi date hi krti...\nYou're now giving me Nightmares now...",
-          delay: 6000,
-        },
-      ],
-    },
-    {
-      expectedSender: ["Wow....",
-                      "Nightmares...."],
-      receiverReplies: [{ text: "Yes" , delay: 3000 }],
-    },
-    {
-      expectedSender: ["Thode din pehle tk toh tuum mere saath future dekh rahi thi", 
-                       "Aur Ab Nightmares..."],
-      receiverReplies: [{ text: "See... No Filmy Dialogues haa... Bye", delay: 4000 }],
-    },
-    {
-      expectedSender: ["Filmy nhi ho rha, bss puch rha hoon.. Ki maaine galat kya kiya hai?"],
-      receiverReplies: [], // Fallback auto-reply can be used.
-    },
-    {
-      expectedSender: ["?", "Hello?", "gyi kya?", "oye?", "??"],
-      receiverReplies: [
-        { text: "Bro Please yaar, baad main baat karenge....", delay: 4000 },
-        { text: "Abhi mera mood nhi hai... Bye", delay: 3000 },
-        { text: "And Yatharth... Please have some Self Respect...", delay: 3000 },
-      ],
-    },
+        { audioUrl: "https://www.example.com/receiver-voice1.mp3", delay: 3000 },
+        { audioUrl: "https://www.example.com/receiver-voice2.mp3", delay: 3000 },
+        { audioUrl: "https://www.example.com/receiver-voice3.mp3", delay: 3000 }
+      ]
+    }
   ];
 
-  // ----------------- Auto-Trigger Stage 0 on Chat Open -----------------
+  // Auto-trigger Stage 0 on Chat Open
   useEffect(() => {
-    if (conversationStage === 0) {
-      // Auto-trigger stage 0 after a short delay (e.g., 3000 ms) so receiver starts first.
+    if (conversationStage === 0 && conversationStagesFinal[0].expectedSender.length === 0) {
       const timer = setTimeout(() => {
         triggerFixedReply(0);
         setConversationStage(1);
@@ -271,7 +147,6 @@ const Chat = () => {
     }
   }, [conversationStage]);
 
-  // ----------------- Scroll & Window Click Handlers -----------------
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
@@ -294,30 +169,48 @@ const Chat = () => {
   };
 
   // ----------------- Fixed Script Reply Trigger Function -----------------
+  // Handles both text and voice message replies.
   const triggerFixedReply = (stageIndex) => {
-    const stage = conversationStages[stageIndex];
+    const stage = conversationStagesFinal[stageIndex];
     setIsTyping(true);
     let cumulativeDelay = 0;
     const lineGap = 500;
     stage.receiverReplies.forEach((replyObj) => {
       cumulativeDelay += replyObj.delay;
-      const lines = replyObj.text.split("\n").filter((line) => line.trim() !== "");
-      lines.forEach((line, index) => {
+      if (replyObj.audioUrl) {
+        // For voice message replies:
         setTimeout(() => {
           const newReply = {
-            id: messages.length + 1, // In production, use a proper unique id
+            id: messages.length + 1,
             senderId: CRUSH_ID,
-            type: "text",
-            text: line,
+            type: "voice",
+            audioUrl: replyObj.audioUrl,
             timestamp: new Date().toISOString(),
             status: "read",
           };
           setMessages((prev) => [...prev, newReply]);
-          if (index === lines.length - 1) {
-            setTimeout(() => setIsTyping(false), 500);
-          }
-        }, cumulativeDelay + index * lineGap);
-      });
+          setTimeout(() => setIsTyping(false), 500);
+        }, cumulativeDelay);
+      } else {
+        // For text replies:
+        const lines = replyObj.text.split("\n").filter((line) => line.trim() !== "");
+        lines.forEach((line, index) => {
+          setTimeout(() => {
+            const newReply = {
+              id: messages.length + 1,
+              senderId: CRUSH_ID,
+              type: "text",
+              text: line,
+              timestamp: new Date().toISOString(),
+              status: "read",
+            };
+            setMessages((prev) => [...prev, newReply]);
+            if (index === lines.length - 1) {
+              setTimeout(() => setIsTyping(false), 500);
+            }
+          }, cumulativeDelay + index * lineGap);
+        });
+      }
     });
     setTimeout(() => setIsTyping(false), cumulativeDelay + 500);
   };
@@ -338,9 +231,11 @@ const Chat = () => {
     setMessages((prev) => [...prev, newUserMessage]);
     setMessage("");
 
-    if (conversationStage < conversationStages.length) {
-      const expectedParts = conversationStages[conversationStage].expectedSender;
-      if (expectedParts.length > 0 && userMessage === expectedParts[expectedPartIndex].trim()) {
+    // For stages expecting text input:
+    if (conversationStage < conversationStagesFinal.length) {
+      const expectedParts = conversationStagesFinal[conversationStage].expectedSender;
+      // If the expected input is NOT "voice message", compare text
+      if (expectedParts.length > 0 && expectedParts[expectedPartIndex] !== "voice message" && userMessage === expectedParts[expectedPartIndex].trim()) {
         const newIndex = expectedPartIndex + 1;
         setExpectedPartIndex(newIndex);
         if (newIndex === expectedParts.length) {
@@ -363,10 +258,12 @@ const Chat = () => {
         status: "read",
       };
       setMessages((prev) => [...prev, crushResponse]);
-    }, 600000);
+    }, 3000);
   };
 
-  const handleVoiceNote = () => {
+  // ----------------- Voice Message Handler -----------------
+  // When the mic icon is clicked, a voice message is sent.
+  const handleVoiceMessage = () => {
     const newVoiceMessage = {
       id: messages.length + 1,
       senderId: "me",
@@ -376,17 +273,19 @@ const Chat = () => {
       status: "sent",
     };
     setMessages((prev) => [...prev, newVoiceMessage]);
-    setTimeout(() => {
-      const crushResponse = {
-        id: messages.length + 2,
-        senderId: CRUSH_ID,
-        type: "voice",
-        audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
-        timestamp: new Date().toISOString(),
-        status: "read",
-      };
-      setMessages((prev) => [...prev, crushResponse]);
-    }, 3000);
+    if (conversationStage < conversationStagesFinal.length) {
+      const expectedParts = conversationStagesFinal[conversationStage].expectedSender;
+      if (expectedParts.length > 0 && expectedParts[expectedPartIndex] === "voice message") {
+        const newIndex = expectedPartIndex + 1;
+        setExpectedPartIndex(newIndex);
+        if (newIndex === expectedParts.length) {
+          triggerFixedReply(conversationStage);
+          setConversationStage(conversationStage + 1);
+          setExpectedPartIndex(0);
+          return;
+        }
+      }
+    }
   };
 
   // ----------------- Context Menu & Long Press Functions -----------------
@@ -458,7 +357,7 @@ const Chat = () => {
                 }`}
               >
                 {msg.type === "voice" ? (
-                  <VoiceNote audioUrl={msg.audioUrl} />
+                  <VoiceMessage audioUrl={msg.audioUrl} />
                 ) : (
                   <p className="text-sm whitespace-pre-line">{msg.text}</p>
                 )}
@@ -496,7 +395,7 @@ const Chat = () => {
           <button
             type="button"
             className="p-2 text-instagram-blue hover:bg-gray-100 dark:hover:bg-instagram-elevated rounded-full"
-            onClick={handleVoiceNote}
+            onClick={handleVoiceMessage}
           >
             <MicrophoneIcon className="w-6 h-6" />
           </button>
