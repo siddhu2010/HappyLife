@@ -108,21 +108,21 @@ const Chat = () => {
     {
       expectedSender: ["voice message"],
       receiverReplies: [
-        { text: "Yatharth...just be calm....", delay: 3000 }
+        { text: "Yatharth...just be calm....", delay: 7000 }
       ]
     },
     // Stage 2: Sender sends another voice message.
     {
       expectedSender: ["voice message"],
       receiverReplies: [
-        { text: "Meri awaaz sun naa hai??", delay: 3000 }
+        { text: "Meri awaaz sun naa hai??", delay: 8000 }
       ]
     },
     // Stage 3: Sender sends a voice message.
     {
       expectedSender: ["voice message"],
       receiverReplies: [
-        { text: "toh pehle bolo mujh pe gussa nhi karoge..", delay: 3000 }
+        { text: "toh pehle bolo mujh pe gussa nhi karoge..", delay: 9000 }
       ]
     },
     // Stage 4: Sender sends a voice message; receiver sends multiple voice message replies.
@@ -130,8 +130,8 @@ const Chat = () => {
       expectedSender: ["voice message"],
       receiverReplies: [
         { audioUrl: "https://www.example.com/receiver-voice1.mp3", delay: 3000 },
-        { audioUrl: "https://www.example.com/receiver-voice2.mp3", delay: 3000 },
-        { audioUrl: "https://www.example.com/receiver-voice3.mp3", delay: 3000 }
+        { audioUrl: "https://www.example.com/receiver-voice2.mp3", delay: 7000 },
+        { audioUrl: "https://www.example.com/receiver-voice3.mp3", delay: 10000 }
       ]
     }
   ];
