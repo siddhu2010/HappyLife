@@ -98,43 +98,45 @@ const Chat = () => {
   // Stage 0 will be auto-triggered from the receiver.
   const conversationStages = [
     {
-      expectedSender: [], // No sender input needed for stage 0
+      expectedSender: [Hey], // No sender input needed for stage 0
       receiverReplies: [
         { text: "Heyyyy!!!!", delay: 3000 },
         {
           text:
             "Ritika told me about you.\nAnd she was pretty right!!\nTum message krne mein kaafi sochte ho, toh isliye maine hi message kar diya.",
-          delay: 3000,
+          delay: 5000,
         },
       ],
     },
     {
       expectedSender: [
-        "Aree nahi nahi... It's nothing like that.",
+        "Aree nhi nhi... ",
+        "Aisa kn hai",
         "It's just that I've never been open to someone whom I don’t know.",
       ],
       receiverReplies: [
         {
           text:
-            "Ohhhhhh!!!!! Aisi baat hai? Matlab kaafi shy ho tum.\nLekin agar tum baat hi nahi karoge, toh mujhe jaanoge kaise...",
-          delay: 3000,
+            "Ohhhhhh!!!!! Aisi baat hai? \n Matlab kaafi shy ho tum.\nLekin agar tum baat hi nahi karoge, toh mujhe jaanoge kaise...",
+          delay: 4000,
         },
       ],
     },
     {
       expectedSender: [
-        "Yaa... Exactly! That’s why I think we should meet first.",
-        "Kyunki aajkal, you know, it's quite sus to interact on social media.",
+        "Yes Exactly!!",
+        "Isliye I think we should meet first.",
+        "Kyunki aajkal, you know, it's quite sus about trusting social media!",
       ],
       receiverReplies: [
-        { text: "Abhi se shaq, haan!! Hmm... Nice.", delay: 3000 },
+        { text: "Abhi se shaq, haan!! 😏 Hmm... Nice.", delay: 3000 },
       ],
     },
     {
       expectedSender: [
-        "Aree nahi nahi, mera woh matlab nahi tha.",
-        "Actuallyyy, I’ve also stalked you and you look genuine... Hehehe!!",
-        "(Sorry for poor humour.)",
+        "Aree nhi, mera vo mtlb nahi tha.",
+        "Actuallyyy, Meine tumhe stalk kia and you look genuine... ",
+        "Hehehe!!(Sorry for poor humour.)",
       ],
       receiverReplies: [
         {
