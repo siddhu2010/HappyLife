@@ -214,7 +214,7 @@ const Chat = () => {
     {
       expectedSender: [
          "So what yaar.. Mere bhi kaam hai.",
-         "I'm also filmmaker.. I've also have lot of work to do,\nwoh bhi college ke saath... ",
+         "I'm also filmmaker.. I've also have lot of work to do,woh bhi college ke saath... ",
          "Phir bhi main tumhare liye time nikalta hoon.."
       ],
       receiverReplies: [
