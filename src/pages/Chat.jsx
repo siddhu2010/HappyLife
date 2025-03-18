@@ -227,7 +227,7 @@ const Chat = () => {
     {
       expectedSender: [
         "What the fuck!!!",
-        "Yeh baat kaha se aagyi beech main..,"
+        "Yeh baat kaha se aagyi beech main..,",
         "I'm just saying ki mujhse milo yaa phir VC karo.."
       ],
       receiverReplies: [
