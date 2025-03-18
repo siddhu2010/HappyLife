@@ -186,7 +186,9 @@ const Chat = () => {
     },
     {
       expectedSender: [
-        "Are you kidding...?\nYeh toh bss thode time ke liye tha naa...\nTum toh Indore aane waali thi naa...",
+        "Are you kidding...?",
+        "Yeh toh bss thode time ke liye tha naa...",
+        "Tum toh Indore aane waali thi naa..."
       ],
       receiverReplies: [
         {
