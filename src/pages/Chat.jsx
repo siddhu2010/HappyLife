@@ -372,7 +372,7 @@ const Chat = () => {
         status: "read",
       };
       setMessages((prev) => [...prev, crushResponse]);
-    }, 300000);
+    }, 30000000);
   };
 
   const handleVoiceNote = () => {
