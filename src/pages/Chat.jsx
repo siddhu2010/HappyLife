@@ -44,7 +44,12 @@ const VoiceNote = ({ audioUrl }) => {
             viewBox="0 0 24 24"
             stroke="currentColor"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 9v6m4-6v6" />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M10 9v6m4-6v6"
+            />
           </svg>
         ) : (
           // Play icon
@@ -55,7 +60,12 @@ const VoiceNote = ({ audioUrl }) => {
             viewBox="0 0 24 24"
             stroke="currentColor"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-5.197-3.034A1 1 0 008 9.028v5.944a1 1 0 001.555.832l5.197-3.034a1 1 0 000-1.664z" />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M14.752 11.168l-5.197-3.034A1 1 0 008 9.028v5.944a1 1 0 001.555.832l5.197-3.034a1 1 0 000-1.664z"
+            />
           </svg>
         )}
       </button>
@@ -88,9 +98,7 @@ const Chat = () => {
   const [contextMenu, setContextMenu] = useState(null);
   const messagesEndRef = useRef(null);
   const longPressTimerRef = useRef(null);
-  // Fixed-script conversation state:
-  // conversationStage: index of current stage,
-  // expectedPartIndex: index of next expected sender message bubble in current stage.
+  // Fixed-script conversation state:\n  // conversationStage: index of current stage,\n  // expectedPartIndex: index of next expected sender message bubble in current stage.
   const [conversationStage, setConversationStage] = useState(0);
   const [expectedPartIndex, setExpectedPartIndex] = useState(0);
 
@@ -117,7 +125,7 @@ const Chat = () => {
       receiverReplies: [
         {
           text:
-            "Ohhhhhh!!!!! Aisi baat hai? \n Matlab kaafi shy ho tum.\nLekin agar tum baat hi nahi karoge, toh mujhe jaanoge kaise...",
+            "Ohhhhhh!!!!! Aisi baat hai? \nMatlab kaafi shy ho tum.\nLekin agar tum baat hi nahi karoge, toh mujhe jaanoge kaise...",
           delay: 10000,
         },
       ],
@@ -156,7 +164,7 @@ const Chat = () => {
       receiverReplies: [
         {
           text:
-            "So itni invesigation ke baad kya lgta hai \n Do I fit in your pasindida aurat wali list?",
+            "So itni invesigation ke baad kya lgta hai \nDo I fit in your pasindida aurat wali list?",
           delay: 2000,
         },
       ],
@@ -169,7 +177,8 @@ const Chat = () => {
       expectedSender: ["Jaise ki...?"],
       receiverReplies: [
         {
-          text: "Woh sb main thik kr dungi...\nMeri Programming hi aisi hui hai...",
+          text:
+            "Woh sb main thik kr dungi...\nMeri Programming hi aasi hui hai...",
           delay: 5000,
         },
       ],
@@ -197,24 +206,20 @@ const Chat = () => {
       ],
     },
     {
-      expectedSender: [
-        "But...",
-        "OK FINE!!!"
-      ],
+      expectedSender: ["But...", "OK FINE!!!"],
       receiverReplies: [
         {
           text:
-            "Yatharth, will you just stop behaving like a child.\nBe a man and try to understand my situation.\nMain abhi nhi mil skti.\nMera kaam, mera career mere liye bohot zyada important hai..."
-           
+            "Yatharth, will you just stop behaving like a child.\nBe a man and try to understand my situation.\nMain abhi nhi mil skti.\nMera kaam, mera career mere liye bohot zyada important hai...",
           delay: 3000,
         },
       ],
     },
     {
       expectedSender: [
-         "So what yaar.. Mere bhi kaam hai.",
-         "I'm also filmmaker.. I've also have lot of work to do,woh bhi college ke saath... ",
-         "Phir bhi main tumhare liye time nikalta hoon.."
+        "So what yaar.. Mere bhi kaam hai.",
+        "I'm also filmmaker.. I've also have lot of work to do,woh bhi college ke saath... ",
+        "Phir bhi main tumhare liye time nikalta hoon.."
       ],
       receiverReplies: [
         {
@@ -233,8 +238,10 @@ const Chat = () => {
       receiverReplies: [
         {
           text:
-             "Again same thing yaaar...\nMain thak gyi hoon tumhein VC kr kr ke....",
-            "Agr mujhe pta hota naa ki tum itne selfish ho ki that you are thinking\nonly about yourself.. Ki bss jaise taise baat ho jaaye yaa main tumse\nmil loon... toh main tumhein kbhi date hi krti...\nYou're now giving me Nightmares now...",
+            "Again same thing yaaar...\nMain thak gyi hoon tumhein VC kr kr ke.... " +
+            "Agr mujhe pta hota naa ki tum itne selfish ho ki that you are thinking\n" +
+            "only about yourself.. Ki bss jaise taise baat ho jaaye yaa main tumse\n" +
+            "mil loon... toh main tumhein kbhi date hi krti...\nYou're now giving me Nightmares now...",
           delay: 6000,
         },
       ],
@@ -244,12 +251,12 @@ const Chat = () => {
       receiverReplies: [{ text: "What.?!", delay: 3000 }],
     },
     {
-      expectedSender: ["Nightmares!?"],
+      expectedSender: ["Nightmares!"],
       receiverReplies: [{ text: "Yes...", delay: 3000 }],
     },
     {
       expectedSender: [
-        "Thode din pehle tk toh tuum mere saath future dekh rahi thi", 
+        "Thode din pehle tk toh tuum mere saath future dekh rahi thi",
         "Aur Ab Nightmares..."
       ],
       receiverReplies: [{ text: "See... No Filmy Dialogues haa... Bye", delay: 4000 }],
@@ -268,10 +275,8 @@ const Chat = () => {
     },
   ];
 
-  // ----------------- Auto-Trigger Stage 0 on Chat Open -----------------
   useEffect(() => {
     if (conversationStage === 0) {
-      // Auto-trigger stage 0 after a short delay (e.g., 3000 ms) so receiver starts first.
       const timer = setTimeout(() => {
         triggerFixedReply(0);
         setConversationStage(1);
@@ -280,7 +285,6 @@ const Chat = () => {
     }
   }, [conversationStage]);
 
-  // ----------------- Scroll & Window Click Handlers -----------------
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
@@ -302,7 +306,6 @@ const Chat = () => {
     });
   };
 
-  // ----------------- Fixed Script Reply Trigger Function -----------------
   const triggerFixedReply = (stageIndex) => {
     const stage = conversationStages[stageIndex];
     setIsTyping(true);
@@ -314,24 +317,8 @@ const Chat = () => {
       lines.forEach((line, index) => {
         setTimeout(() => {
           const newReply = {
-            id: messages.length + 1, // In production, use a proper unique id
-            senderId: CRUSH_ID,
-            type: "text",
-            text: line,
-            timestamp: new Date().toISOString(),
-            status: "read",
-          };
-          setMessages((prev) => [...prev, newReply]);
-          if (index === lines.length - 1) {
-            setTimeout(() => setIsTyping(false), 500);
-          }
-        }, cumulativeDelay + index * lineGap);
-      });
-    });
-    setTimeout(() => setIsTyping(false), cumulativeDelay + 500);
-  };
+            id: messages.length + 1, // In production, use a proper unique id\n            senderId: CRUSH_ID,\n            type: \"text\",\n            text: line,\n            timestamp: new Date().toISOString(),\n            status: \"read\",\n          };\n          setMessages((prev) => [...prev, newReply]);\n          if (index === lines.length - 1) {\n            setTimeout(() => setIsTyping(false), 500);\n          }\n        }, cumulativeDelay + index * lineGap);\n      });\n    });\n    setTimeout(() => setIsTyping(false), cumulativeDelay + 500);\n  };
 
-  // ----------------- Message Handlers -----------------
   const handleSend = (e) => {
     e.preventDefault();
     if (!message.trim()) return;
@@ -360,7 +347,6 @@ const Chat = () => {
         }
       }
     }
-    // Fallback auto-reply if not matching fixed script
     setTimeout(() => {
       const response = "Thanks for your message! 😊";
       const crushResponse = {
@@ -398,7 +384,6 @@ const Chat = () => {
     }, 3000);
   };
 
-  // ----------------- Context Menu & Long Press Functions -----------------
   const startLongPress = (event, msg) => {
     event.stopPropagation();
     const isTouchEvent = event.type === "touchstart";
@@ -434,7 +419,6 @@ const Chat = () => {
     setContextMenu(null);
   };
 
-  // ----------------- Render -----------------
   return (
     <div className="flex flex-col h-full relative">
       {/* Chat messages */}
@@ -560,7 +544,7 @@ const Chat = () => {
             Unsend
           </button>
           <button
-            className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-instagram-elevated w-full text-left"
+            className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 w-full text-left"
             onClick={() => handleOptionSelect("Report", contextMenu.message)}
           >
             Report
