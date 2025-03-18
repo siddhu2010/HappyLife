@@ -199,20 +199,22 @@ const Chat = () => {
     {
       expectedSender: [
         "But...",
-        "OK FINE!!!",
-        "Sender, will you just stop behaving like a child.\nBe a man and try to understand my situation.\nMain abhi nhi mil skti.\nMera kaam, mera career mere liye bohot zyada important hai..."
+        "OK FINE!!!"
       ],
       receiverReplies: [
         {
           text:
-            "So what yaar.. Mere bhi kaam hai.\nI'm also filmmaker.. I've also have lot of work to do,\nwoh bhi college ke saath... Phir bhi main tumhare liye time nikalta hoon..",
+            "Yatharth, will you just stop behaving like a child.\nBe a man and try to understand my situation.\nMain abhi nhi mil skti.\nMera kaam, mera career mere liye bohot zyada important hai..."
+           
           delay: 3000,
         },
       ],
     },
     {
       expectedSender: [
-        "What the fuck!!!\nYeh baat kaha se aagyi beech main..\nI'm just saying ki mujhse milo yaa phir VC karo.."
+         "So what yaar.. Mere bhi kaam hai.",
+         "I'm also filmmaker.. I've also have lot of work to do,woh bhi college ke saath... ",
+         "Phir bhi main tumhare liye time nikalta hoon.."
       ],
       receiverReplies: [
         {
@@ -224,23 +226,26 @@ const Chat = () => {
     },
     {
       expectedSender: [
-        "Again same thing yaaar...\nMain thak gyi hoon tumhein VC kr kr ke...."
+        "What the fuck!!!",
+        "Yeh baat kaha se aagyi beech main..,"
+        "I'm just saying ki mujhse milo yaa phir VC karo.."
       ],
       receiverReplies: [
         {
           text:
+             "Again same thing yaaar...\nMain thak gyi hoon tumhein VC kr kr ke....",
             "Agr mujhe pta hota naa ki tum itne selfish ho ki that you are thinking\nonly about yourself.. Ki bss jaise taise baat ho jaaye yaa main tumse\nmil loon... toh main tumhein kbhi date hi krti...\nYou're now giving me Nightmares now...",
           delay: 6000,
         },
       ],
     },
     {
-      expectedSender: ["You are funny yaar!!"],
-      receiverReplies: [{ text: "Wow....", delay: 3000 }],
+      expectedSender: ["Wow..."],
+      receiverReplies: [{ text: "What.?!", delay: 3000 }],
     },
     {
-      expectedSender: ["Main loser!?"],
-      receiverReplies: [{ text: "Yes.", delay: 3000 }],
+      expectedSender: ["Nightmares!?"],
+      receiverReplies: [{ text: "Yes...", delay: 3000 }],
     },
     {
       expectedSender: [
